@@ -1,14 +1,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-require('dotenv').config();
 
 // Configurando o mecanismo de visualização EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Servindo arquivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 // Rota para a página inicial
 app.get('/', (req, res) => {
