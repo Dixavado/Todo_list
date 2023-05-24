@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+require('dotenv').config();
 
 // Configurando o mecanismo de visualização EJS
 app.set('view engine', 'ejs');
