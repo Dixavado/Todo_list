@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+require('dotenv').config();
 
 // Configurando o mecanismo de visualização EJS
 app.set('view engine', 'ejs');
@@ -14,7 +15,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-// Iniciando o servidor na porta 3000
-app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000');
+// Obtendo a porta do servidor a partir das variáveis de ambiente
+const port = process.env.PORT || 3000;
+
+// Iniciando o servidor na porta especificada
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
 });
